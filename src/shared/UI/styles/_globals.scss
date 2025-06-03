@@ -1,0 +1,22 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+body {
+  font-family: $ff-main;
+  font-size: $fz-sm;
+  line-height: $lh-sm;
+  background-color: $grey-10;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
