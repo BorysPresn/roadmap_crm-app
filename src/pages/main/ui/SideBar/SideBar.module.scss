@@ -1,0 +1,35 @@
+@use "../../../../shared/UI/styles/variables" as *;
+
+.sidebar {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  bottom: 0;
+  width: 92px;
+  padding: 20px;
+  background-color: #f6fafde5;
+  border-right: 1px solid $grey-30;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: $white;
+  border: 1px solid $grey-30;
+  color: $grey-70;
+}
+.active {
+  background-color: $blue;
+  color: $white;
+}

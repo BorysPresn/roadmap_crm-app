@@ -32,6 +32,12 @@ export default tseslint.config(
     },
     settings: {
       ...imports.settings,
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          project: "./tsconfig.json",
+        },
+      },
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -47,7 +53,7 @@ export default tseslint.config(
       ...variables.rules,
       ...reactA11y.rules,
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 );

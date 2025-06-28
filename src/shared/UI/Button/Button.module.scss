@@ -1,12 +1,15 @@
 @use "../styles/variables" as *;
+@use "../styles/typography" as *;
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 10px 20px 10px 16px;
+  padding: 10px 24px;
   color: $white;
+  font-size: $fz-small;
+  line-height: $lh-h5;
 }
 
 .button--round {
@@ -31,4 +34,8 @@
 
 .button--pink {
   background-color: $pink;
+}
+
+.border--grey {
+  border: 1px solid $grey-30;
 }
