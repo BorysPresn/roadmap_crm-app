@@ -1,0 +1,22 @@
+image: node:20
+
+stages:
+  - lint
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+
+lint-job:
+  stage: lint
+  script:
+    - npm ci # Устанавливаем зависимости через npm ci для чистой установки
+    - npm run lint # Запускаем ESLint
+    - npx pretty-quick --check --staged # Запускаем Prettier (если у тебя настроен форматтер)
+    - npx tsc --noEmit --project ./tsconfig.app.json
+  allow_failure: false # Если проверки не пройдены, CI завершится с ошибкой
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
