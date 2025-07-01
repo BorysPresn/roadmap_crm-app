@@ -40,7 +40,7 @@ const Input: React.FC<IInputProps> = ({
         className={cl.input}
         {...rest}
       />
-      <p className={clsx(cl.error, error && cl.errorVisible)}>{error}</p>
+      <p className={clsx(cl.error, error && cl.showError)}>{error}</p>
     </div>
   );
 };
