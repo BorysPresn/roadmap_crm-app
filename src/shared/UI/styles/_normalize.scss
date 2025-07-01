@@ -22,17 +22,10 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 ul,
 ol {
   list-style: none;
-}
-
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-  font-family: "Inter", sans-serif; /* можно заменить на свой шрифт */
-  background-color: #fff;
-  color: #000;
 }

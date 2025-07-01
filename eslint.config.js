@@ -32,6 +32,12 @@ export default tseslint.config(
     },
     settings: {
       ...imports.settings,
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          project: "./tsconfig.json",
+        },
+      },
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
