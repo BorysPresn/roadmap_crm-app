@@ -50,12 +50,7 @@ const AuthPage: React.FC = () => {
   };
   return (
     <div className={cl.bg}>
-      <div
-        className={cl.formContainer}
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
+      <div className={cl.formContainer}>
         <h1 className={cl.title}>{isLoginMode ? "Login" : "Registration"}</h1>
         {isLoginMode ? (
           <LoginForm

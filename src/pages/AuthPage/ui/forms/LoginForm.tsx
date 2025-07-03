@@ -54,10 +54,17 @@ const LoginForm: React.FC<AuthFormProps> = ({
       />
       <div className={cl.buttons}>
         <Button
+          type="button"
           shape="pill"
           variant="white"
           onClick={onToggleMode}
           disabled={isSubmitting}
+          onKeyDown={(e) => {
+            // <--- ДОБАВЛЕНО
+            if (e.key === "Enter") {
+              e.preventDefault(); // Предотвращаем срабатывание onClick по Enter
+            }
+          }}
         >
           Register
         </Button>

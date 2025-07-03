@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Button, Input } from "@shared/UI";
+import { Button, Input } from "@shared/UI/index.ts";
 import { useForm } from "react-hook-form";
 
-import type { IRegisterFormData } from "../../model/authApi";
+import type { IRegisterFormData } from "../../model/authApi.ts";
 import type { AuthFormProps } from "./LoginForm";
 
 import cl from "../styles/FormStyles.module.scss";
@@ -98,6 +98,7 @@ const RegisterForm: React.FC<AuthFormProps> = ({
       />
       <div className={cl.buttons}>
         <Button
+          type="button"
           shape="pill"
           variant="white"
           onClick={onToggleMode}

@@ -23,7 +23,7 @@ export const Button: React.FC<IButtonProps> = ({
   children,
   icon,
   iconPosition = "left",
-  onClick,
+  ...rest
 }) => {
   const classNames = clsx(
     cl.button,
@@ -34,7 +34,7 @@ export const Button: React.FC<IButtonProps> = ({
   );
 
   return (
-    <button className={classNames} onClick={onClick}>
+    <button className={classNames} {...rest}>
       {icon && iconPosition === "left" && <Icon name={icon} />}
       {children}
       {icon && iconPosition === "right" && <Icon name={icon} />}
