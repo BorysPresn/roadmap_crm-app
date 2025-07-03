@@ -92,7 +92,7 @@ const RegisterForm: React.FC<AuthFormProps> = ({
         type="password"
         error={errors.repeatPassword?.message || ""}
         {...register("repeatPassword", {
-          required: "Repeat assword is required",
+          required: "Repeat password is required",
           validate: (value) => value === password || "Passwords do not match",
         })}
       />

@@ -15,8 +15,8 @@ export interface IRegisterFormData extends ILoginFormData {
 
 export interface IAuthSuccessResponse {
   message: string;
-  token: string;
-  refreshToken: string;
+  access_token: string;
+  refresh_token: string;
 }
 
 export interface IAuthErrorResponse {
@@ -38,8 +38,8 @@ export const useLogin = () =>
     },
 
     onSuccess: (data) => {
-      sessionStorage.setItem("refreshToken", data.refreshToken);
-      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("refreshToken", data.refresh_token);
+      sessionStorage.setItem("token", data.access_token);
     },
   });
 

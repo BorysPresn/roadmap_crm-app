@@ -10,8 +10,8 @@ import {
   useLogin,
   useRegister,
 } from "../model/authApi.ts";
-import RegisterForm from "./RegisterForm.tsx";
 import LoginForm from "./forms/LoginForm.tsx";
+import RegisterForm from "./forms/RegisterForm.tsx";
 
 import cl from "./styles/AuthPage.module.scss";
 
