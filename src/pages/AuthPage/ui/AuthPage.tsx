@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+import { Toast } from "@shared/UI/index.ts";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import {
   type IAuthErrorResponse,
@@ -10,7 +12,7 @@ import {
   useLogin,
   useRegister,
 } from "../model/authApi.ts";
-import LoginForm from "./forms/LoginForm.tsx";
+import { LoginForm } from "./forms/LoginForm.tsx";
 import RegisterForm from "./forms/RegisterForm.tsx";
 
 import cl from "./styles/AuthPage.module.scss";
@@ -37,6 +39,7 @@ const AuthPage: React.FC = () => {
         navigate("/dashboard");
       } else {
         await registerMutation.mutateAsync(data as IRegisterFormData);
+        toast(<Toast icon="firework" message="User created, please Sign in" />);
         setIsLoginMode(true);
       }
     } catch (error) {

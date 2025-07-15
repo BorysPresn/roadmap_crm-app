@@ -1,5 +1,7 @@
 import React, { type FC, type SVGProps } from "react";
 
+import ToastFire from "../assets/emoji/ToastFire.svg?react";
+import ToastFirework from "../assets/emoji/ToastFireWork.svg?react";
 import CalendarBoldIcon from "../assets/icons/CalendarBoldIcon.svg?react";
 import CalendarIcon from "../assets/icons/CalendarIcon.svg?react";
 import CustomersBoldIcon from "../assets/icons/CustomersBoldIcon.svg?react";
@@ -16,6 +18,7 @@ import SettingsBoldIcon from "../assets/icons/SettingsBoldIcon.svg?react";
 import SettingsIcon from "../assets/icons/SettingsIcon.svg?react";
 import TasksBoldIcon from "../assets/icons/TasksBoldIcon.svg?react";
 import TasksIcon from "../assets/icons/TasksIcon.svg?react";
+import ToastClose from "../assets/icons/ToastClose.svg?react";
 import AddIcon from "../assets/icons/addIcon.svg?react";
 
 export type NavIconName =
@@ -29,7 +32,9 @@ export type NavIconName =
 
 type NavIconNameBold = `${NavIconName}Bold`;
 type StaticIcons = "add" | "logo" | "search";
-export type IconName = StaticIcons | NavIconName | NavIconNameBold;
+export type ToastIcons = "fire" | "firework" | "close";
+
+export type IconName = ToastIcons | StaticIcons | NavIconName | NavIconNameBold;
 
 const icons: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   add: AddIcon,
@@ -49,6 +54,9 @@ const icons: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   notificationsBold: NotificationsBoldIcon,
   settings: SettingsIcon,
   settingsBold: SettingsBoldIcon,
+  firework: ToastFirework,
+  fire: ToastFire,
+  close: ToastClose,
 };
 
 interface IconProps {

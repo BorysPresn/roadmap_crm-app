@@ -14,7 +14,7 @@ export interface AuthFormProps {
   errorMessage: string | null;
 }
 
-const LoginForm: React.FC<AuthFormProps> = ({
+export const LoginForm: React.FC<AuthFormProps> = ({
   onFormSubmit,
   onToggleMode,
   isSubmitting,

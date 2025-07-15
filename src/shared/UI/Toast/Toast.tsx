@@ -1,0 +1,28 @@
+import React from "react";
+
+import { Icon, type ToastIcons } from "../icon/index.ts";
+
+import cl from "./Toast.module.scss";
+
+interface IToastProps {
+  message: string;
+  icon: ToastIcons;
+  closeToast?: () => void;
+}
+const Toast: React.FC<IToastProps> = ({ icon, message, closeToast }) => (
+  <>
+    <Icon name={icon} />
+    <p>{message}</p>
+    {closeToast && (
+      <button
+        className={cl.closeBtn}
+        onClick={closeToast}
+        aria-label="close-toast"
+      >
+        <Icon name="close" />
+      </button>
+    )}
+  </>
+);
+
+export default Toast;

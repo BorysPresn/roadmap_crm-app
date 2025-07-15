@@ -1,1 +1,6 @@
-export { Icon, type IconName, type NavIconName } from "./Icon.tsx";
+export {
+  Icon,
+  type IconName,
+  type NavIconName,
+  type ToastIcons,
+} from "./Icon.tsx";
