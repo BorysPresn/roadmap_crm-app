@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Icon, type ToastIcons } from "../icon/index.ts";
+import { Icon, type ToastIcons } from "../Icon/index.ts";
 
 import cl from "./Toast.module.scss";
 

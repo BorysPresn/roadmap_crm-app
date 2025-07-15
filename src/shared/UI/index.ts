@@ -1,4 +1,8 @@
-export { Icon, type IconName, type NavIconName } from "./icon/index.ts";
-export { Button } from "./Button/index.ts";
-export { Input } from "./Input/index.ts";
-export { Toast } from "./Toast/index.ts";
+export {
+  Icon,
+  type IconName,
+  type NavIconName,
+} from "./components/Icon/index.ts";
+export { Button } from "./components/Button/index.ts";
+export { Input } from "./components/Input/index.ts";
+export { Toast } from "./components/Toast/index.ts";

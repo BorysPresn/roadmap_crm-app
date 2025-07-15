@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Input } from "@shared/UI/index.ts";
+import { Button, Input } from "@shared/UI";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
 import type { ILoginFormData } from "../../model/authApi";
