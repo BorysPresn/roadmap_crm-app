@@ -1,9 +1,9 @@
-import { AuthPage } from "@pages/AuthPage/index.ts";
-import { Customers } from "@pages/cutomers/index.ts";
-import { Dashboard } from "@pages/dashboard/index.ts";
-import { Deals } from "@pages/deals/index.ts";
-import { MainPage } from "@pages/main/index.ts";
-import { NotFoundPage } from "@pages/notFound/index.ts";
+import { AuthPage } from "@pages/auth";
+import { Customers } from "@pages/cutomers";
+import { Dashboard } from "@pages/dashboard";
+import { Deals } from "@pages/deals";
+import { MainPage } from "@pages/main";
+import { NotFoundPage } from "@pages/not-found";
 import { Tasks } from "@pages/tasks/index.ts";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
