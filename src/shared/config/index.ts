@@ -1,1 +1,1 @@
-export { toastSetting } from "./toastSetting/index.ts";
+export { toastSetting } from "./toast-setting/index.ts";

@@ -1,25 +1,25 @@
 import React, { type FC, type SVGProps } from "react";
 
-import CalendarBoldIcon from "../../icons/CalendarBoldIcon.svg?react";
-import CalendarIcon from "../../icons/CalendarIcon.svg?react";
-import CustomersBoldIcon from "../../icons/CustomersBoldIcon.svg?react";
-import CustomersIcon from "../../icons/CustomersIcon.svg?react";
-import DashboardBoldIcon from "../../icons/DashboardBoldIcon.svg?react";
-import DashboardIcon from "../../icons/DashboardIcon.svg?react";
-import DealsBoldIcon from "../../icons/DealsBoldIcon.svg?react";
-import DealsIcon from "../../icons/DealsIcon.svg?react";
-import LogoIcon from "../../icons/LogoIcon.svg?react";
-import NotificationsBoldIcon from "../../icons/NotificationsBoldIcon.svg?react";
-import NotificationsIcon from "../../icons/NotificationsIcon.svg?react";
-import SearchIcon from "../../icons/SearchIcon.svg?react";
-import SettingsBoldIcon from "../../icons/SettingsBoldIcon.svg?react";
-import SettingsIcon from "../../icons/SettingsIcon.svg?react";
-import TasksBoldIcon from "../../icons/TasksBoldIcon.svg?react";
-import TasksIcon from "../../icons/TasksIcon.svg?react";
-import ToastClose from "../../icons/ToastClose.svg?react";
-import ToastFire from "../../icons/ToastFire.svg?react";
-import ToastFirework from "../../icons/ToastFireWork.svg?react";
-import AddIcon from "../../icons/addIcon.svg?react";
+import add from "../../icons/add.svg?react";
+import calendar from "../../icons/calendar.svg?react";
+import calendarBold from "../../icons/calendarBold.svg?react";
+import customers from "../../icons/customers.svg?react";
+import customersBold from "../../icons/customersBold.svg?react";
+import dashboard from "../../icons/dashboard.svg?react";
+import dashboardBold from "../../icons/dashboardBold.svg?react";
+import deals from "../../icons/deals.svg?react";
+import dealsBold from "../../icons/dealsBold.svg?react";
+import logo from "../../icons/logo.svg?react";
+import notifications from "../../icons/notifications.svg?react";
+import notificationsBold from "../../icons/notificationsBold.svg?react";
+import search from "../../icons/search.svg?react";
+import settings from "../../icons/settings.svg?react";
+import settingsBold from "../../icons/settingsBold.svg?react";
+import tasks from "../../icons/tasks.svg?react";
+import tasksBold from "../../icons/tasksBold.svg?react";
+import toastClose from "../../icons/toastClose.svg?react";
+import toastFire from "../../icons/toastFire.svg?react";
+import toastFirework from "../../icons/toastFirework.svg?react";
 
 export type NavIconName =
   | "dashboard"
@@ -37,26 +37,26 @@ export type ToastIcons = "fire" | "firework" | "close";
 export type IconName = ToastIcons | StaticIcons | NavIconName | NavIconNameBold;
 
 const icons: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
-  add: AddIcon,
-  logo: LogoIcon,
-  search: SearchIcon,
-  dashboard: DashboardIcon,
-  dashboardBold: DashboardBoldIcon,
-  deals: DealsIcon,
-  dealsBold: DealsBoldIcon,
-  tasks: TasksIcon,
-  tasksBold: TasksBoldIcon,
-  customers: CustomersIcon,
-  customersBold: CustomersBoldIcon,
-  calendar: CalendarIcon,
-  calendarBold: CalendarBoldIcon,
-  notifications: NotificationsIcon,
-  notificationsBold: NotificationsBoldIcon,
-  settings: SettingsIcon,
-  settingsBold: SettingsBoldIcon,
-  firework: ToastFirework,
-  fire: ToastFire,
-  close: ToastClose,
+  add,
+  logo,
+  search,
+  dashboard,
+  dashboardBold,
+  deals,
+  dealsBold,
+  tasks,
+  tasksBold,
+  customers,
+  customersBold,
+  calendar,
+  calendarBold,
+  notifications,
+  notificationsBold,
+  settings,
+  settingsBold,
+  firework: toastFirework,
+  fire: toastFire,
+  close: toastClose,
 };
 
 interface IconProps {
