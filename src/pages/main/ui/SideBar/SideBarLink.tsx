@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Icon, type NavIconName } from "@shared/UI";
+import { Icon, type NavIconName } from "@shared/ui";
 import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 

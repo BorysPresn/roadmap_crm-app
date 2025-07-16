@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Toast } from "@shared/UI/index.ts";
+import { Toast } from "@shared/ui/index.ts";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

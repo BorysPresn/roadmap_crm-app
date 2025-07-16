@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Icon } from "@shared/UI";
+import { Button, Icon } from "@shared/ui";
 import { Link, useLocation } from "react-router-dom";
 
 import cl from "./Header.module.scss";

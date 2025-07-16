@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { NavIconName } from "@shared/UI/index.ts";
+import type { NavIconName } from "@shared/ui/index.ts";
 
 import SideBarLink from "./SideBarLink.tsx";
 
