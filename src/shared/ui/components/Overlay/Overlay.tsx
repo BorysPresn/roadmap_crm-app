@@ -6,6 +6,6 @@ interface OverlayProps {
   children: React.ReactNode;
 }
 
-export const Overlay = ({ children }: OverlayProps) => {
-  return <div className={cl.overlay}>{children}</div>;
-};
+export const Overlay = ({ children }: OverlayProps) => (
+  <div className={cl.overlay}>{children}</div>
+);
