@@ -1,3 +1,7 @@
+export { ContentHeader } from "./components/ContentHeader/index.ts";
+export { FormContainer } from "./components/FormContainer/index.ts";
+export { ButtonContainer } from "./components/ButtonContainer/index.ts";
+
 export {
   Icon,
   type IconName,

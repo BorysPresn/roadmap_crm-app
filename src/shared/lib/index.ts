@@ -1,3 +1,5 @@
+import React from "react";
+
 export function omit<T extends object, K extends keyof T>(
   obj: T,
   keys: K[],
@@ -7,4 +9,8 @@ export function omit<T extends object, K extends keyof T>(
     delete result[key];
   }
   return result;
+}
+
+export interface WithChildren {
+  children: React.ReactNode;
 }
