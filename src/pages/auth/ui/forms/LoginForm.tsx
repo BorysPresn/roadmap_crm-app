@@ -1,14 +1,13 @@
 import React from "react";
 
+import type { LoginFormData } from "@entities/user";
 import { Button, Input } from "@shared/ui";
 import { type SubmitHandler, useForm } from "react-hook-form";
-
-import type { ILoginFormData } from "../../model/authApi";
 
 import cl from "../styles/FormStyles.module.scss";
 
 export interface AuthFormProps {
-  onFormSubmit: (data: ILoginFormData) => void;
+  onFormSubmit: (data: LoginFormData) => void;
   onToggleMode: () => void;
   isSubmitting: boolean;
   errorMessage: string | null;
@@ -24,9 +23,9 @@ export const LoginForm: React.FC<AuthFormProps> = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ILoginFormData>();
+  } = useForm<LoginFormData>();
 
-  const submit: SubmitHandler<ILoginFormData> = (data: ILoginFormData) => {
+  const submit: SubmitHandler<LoginFormData> = (data: LoginFormData) => {
     onFormSubmit(data);
   };
   return (
@@ -60,9 +59,8 @@ export const LoginForm: React.FC<AuthFormProps> = ({
           onClick={onToggleMode}
           disabled={isSubmitting}
           onKeyDown={(e) => {
-            // <--- ДОБАВЛЕНО
             if (e.key === "Enter") {
-              e.preventDefault(); // Предотвращаем срабатывание onClick по Enter
+              e.preventDefault();
             }
           }}
         >

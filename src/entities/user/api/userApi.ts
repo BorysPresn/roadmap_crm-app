@@ -3,34 +3,34 @@ import { omit } from "@shared/lib";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
 
-export interface ILoginFormData {
+export interface LoginFormData {
   email: string;
   password: string;
 }
-export interface IRegisterFormData extends ILoginFormData {
+export interface RegisterFormData extends LoginFormData {
   first_name: string;
   last_name: string;
   repeatPassword: string;
 }
 
-export interface IAuthSuccessResponse {
+export interface AuthSuccessResponse {
   message: string;
   access_token: string;
   refresh_token: string;
 }
 
-export interface IAuthErrorResponse {
+export interface AuthErrorResponse {
   message: string;
 }
 
-export const useLogin = () =>
+export const useLoginMutation = () =>
   useMutation<
-    IAuthSuccessResponse,
-    AxiosError<IAuthErrorResponse>,
-    ILoginFormData
+    AuthSuccessResponse,
+    AxiosError<AuthErrorResponse>,
+    LoginFormData
   >({
-    mutationFn: async (payload: ILoginFormData) => {
-      const response = await apiClient.post<IAuthSuccessResponse>(
+    mutationFn: async (payload: LoginFormData) => {
+      const response = await apiClient.post<AuthSuccessResponse>(
         "/auth/login",
         payload,
       );
@@ -43,13 +43,13 @@ export const useLogin = () =>
     },
   });
 
-export const useRegister = () =>
+export const useRegisterMutation = () =>
   useMutation<
-    IAuthSuccessResponse,
-    AxiosError<IAuthErrorResponse>,
-    IRegisterFormData
+    AuthSuccessResponse,
+    AxiosError<AuthErrorResponse>,
+    RegisterFormData
   >({
-    mutationFn: async (payload: IRegisterFormData) => {
+    mutationFn: async (payload: RegisterFormData) => {
       const dataToSend = omit(payload, ["repeatPassword"]);
       const response = await apiClient.post("/auth/register", dataToSend);
       return response.data;

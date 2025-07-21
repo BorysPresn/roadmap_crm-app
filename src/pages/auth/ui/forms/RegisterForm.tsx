@@ -1,9 +1,9 @@
 import React from "react";
 
+import type { RegisterFormData } from "@entities/user";
 import { Button, Input } from "@shared/ui";
 import { useForm } from "react-hook-form";
 
-import type { IRegisterFormData } from "../../model/authApi.ts";
 import type { AuthFormProps } from "./LoginForm";
 
 import cl from "../styles/FormStyles.module.scss";
@@ -19,7 +19,7 @@ const RegisterForm: React.FC<AuthFormProps> = ({
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<IRegisterFormData>({
+  } = useForm<RegisterFormData>({
     defaultValues: {
       email: "",
       first_name: "",
@@ -28,7 +28,7 @@ const RegisterForm: React.FC<AuthFormProps> = ({
     },
   });
 
-  const submit = (data: IRegisterFormData) => {
+  const submit = (data: RegisterFormData) => {
     onFormSubmit(data);
   };
   const password = watch("password");

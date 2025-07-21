@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
+import {
+  type AuthErrorResponse,
+  type LoginFormData,
+  type RegisterFormData,
+  useLoginMutation,
+  useRegisterMutation,
+} from "@entities/user";
 import { Toast } from "@shared/ui/index.ts";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import {
-  type IAuthErrorResponse,
-  type ILoginFormData,
-  type IRegisterFormData,
-  useLogin,
-  useRegister,
-} from "../model/authApi.ts";
 import { LoginForm } from "./forms/LoginForm.tsx";
 import RegisterForm from "./forms/RegisterForm.tsx";
 
@@ -22,8 +22,8 @@ const AuthPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const navigate = useNavigate();
-  const loginMutation = useLogin();
-  const registerMutation = useRegister();
+  const loginMutation = useLoginMutation();
+  const registerMutation = useRegisterMutation();
   const isSubmitting = loginMutation.isPending || registerMutation.isPending;
 
   const toggleMode = () => {
@@ -31,21 +31,21 @@ const AuthPage: React.FC = () => {
     setErrorMessage(null);
   };
 
-  const onFormSubmit = async (data: ILoginFormData | IRegisterFormData) => {
+  const onFormSubmit = async (data: LoginFormData | RegisterFormData) => {
     setErrorMessage(null);
     try {
       if (isLoginMode) {
         await loginMutation.mutateAsync(data);
         navigate("/dashboard");
       } else {
-        await registerMutation.mutateAsync(data as IRegisterFormData);
+        await registerMutation.mutateAsync(data as RegisterFormData);
         toast(<Toast icon="firework" message="User created, please Sign in" />);
         setIsLoginMode(true);
       }
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response) {
-          const errorData = error.response.data as IAuthErrorResponse;
+          const errorData = error.response.data as AuthErrorResponse;
           setErrorMessage(errorData.message);
         }
       }
