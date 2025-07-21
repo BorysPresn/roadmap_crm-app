@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border-radius: 12px;
+  color: $navy;
+}
+.small {
+  width: 240px;
+}
+.medium {
+  width: 400px;
+}
+.large {
+  width: 620px;
+}
