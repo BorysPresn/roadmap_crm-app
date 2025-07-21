@@ -6,3 +6,4 @@ export {
 export { Button } from "./components/Button/index.ts";
 export { Input } from "./components/Input/index.ts";
 export { Toast } from "./components/Toast/index.ts";
+export { Overlay } from "./components/Overlay";

@@ -7,7 +7,7 @@ import {
   useLoginMutation,
   useRegisterMutation,
 } from "@entities/user";
-import { Toast } from "@shared/ui/index.ts";
+import { Overlay, Toast } from "@shared/ui/index.ts";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -52,7 +52,7 @@ const AuthPage: React.FC = () => {
     }
   };
   return (
-    <div className={cl.bg}>
+    <Overlay>
       <div className={cl.formContainer}>
         <h1 className={cl.title}>{isLoginMode ? "Login" : "Registration"}</h1>
         {isLoginMode ? (
@@ -71,7 +71,7 @@ const AuthPage: React.FC = () => {
           />
         )}
       </div>
-    </div>
+    </Overlay>
   );
 };
 
