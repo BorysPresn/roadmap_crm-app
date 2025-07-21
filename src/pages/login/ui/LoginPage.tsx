@@ -62,7 +62,6 @@ export const LoginPage = () => {
               },
             })}
           />
-
           <Input
             inputId="login-password"
             label="Password"
@@ -83,7 +82,7 @@ export const LoginPage = () => {
                 }
               }}
             >
-              Register
+              Sign up
             </Button>
             <Button
               shape="pill"
