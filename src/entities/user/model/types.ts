@@ -10,8 +10,8 @@ export interface RegisterFormData extends LoginFormData {
 
 export interface AuthSuccessResponse {
   message: string;
-  accessToken: string;
-  refreshToken: string;
+  access_token: string;
+  refresh_token: string;
 }
 
 export interface AuthErrorResponse {
