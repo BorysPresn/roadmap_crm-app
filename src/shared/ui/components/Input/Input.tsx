@@ -6,14 +6,14 @@ import cl from "./Input.module.scss";
 
 type AllowedInputType = "text" | "password" | "email";
 
-interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: AllowedInputType;
   label?: string;
   inputId?: string;
   error?: string;
   ref?: React.Ref<HTMLInputElement>;
 }
-const Input: React.FC<IInputProps> = ({
+export const Input: React.FC<InputProps> = ({
   label,
   inputId,
   placeholder,
@@ -44,5 +44,3 @@ const Input: React.FC<IInputProps> = ({
     </div>
   );
 };
-
-export default Input;
