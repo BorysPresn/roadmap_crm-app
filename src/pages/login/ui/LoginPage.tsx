@@ -1,4 +1,5 @@
 import { type LoginFormData } from "@entities/user";
+import { useLogin } from "@entities/user/index.ts";
 import {
   Button,
   ButtonContainer,
@@ -11,7 +12,6 @@ import {
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import { useLogin } from "../lib/useLogin.ts";
 import { inputFieldsConfig } from "../model/index.ts";
 
 export const LoginPage = () => {

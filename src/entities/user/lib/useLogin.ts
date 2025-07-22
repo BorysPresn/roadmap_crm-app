@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-import {
-  type AuthErrorResponse,
-  type LoginFormData,
-  useLoginMutation,
-} from "@entities/user";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+
+import { useLoginMutation } from "../api/login.ts";
+import { type AuthErrorResponse, type LoginFormData } from "../model/types.ts";
 
 export const useLogin = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
