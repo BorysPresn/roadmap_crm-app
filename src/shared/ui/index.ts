@@ -8,7 +8,7 @@ export {
   type NavIconName,
 } from "./components/Icon/index.ts";
 export { Button } from "./components/Button/index.ts";
-export { Input } from "./components/Input/index.ts";
+export { Input, type InputProps } from "./components/Input/index.ts";
 export { Toast } from "./components/Toast/index.ts";
 export { Overlay } from "./components/Overlay/index.ts";
 export * from "./components/ContentContainer/index.ts";

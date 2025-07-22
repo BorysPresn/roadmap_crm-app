@@ -10,7 +10,7 @@ const MainPage: React.FC = () => {
   useEffect(() => {
     const token = sessionStorage.getItem("token");
     if (!token) {
-      navigate("/auth");
+      navigate("/login");
     }
   });
 

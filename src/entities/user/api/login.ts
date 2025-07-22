@@ -23,7 +23,6 @@ export const useLoginMutation = () =>
     },
 
     onSuccess: (data) => {
-      console.log(data);
       sessionStorage.setItem("refreshToken", data.refresh_token);
       sessionStorage.setItem("token", data.access_token);
     },
