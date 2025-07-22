@@ -60,8 +60,8 @@ export const RegisterPage = () => {
             type="text"
             inputId="first"
             label="First name"
-            error={errors.first_name?.message || ""}
-            {...register("first_name", {
+            error={errors.firstName?.message || ""}
+            {...register("firstName", {
               required: "First name is required",
               pattern: {
                 value: /^[a-zA-Z]+$/,
@@ -73,8 +73,8 @@ export const RegisterPage = () => {
             type="text"
             inputId="last"
             label="Last name"
-            error={errors.last_name?.message || ""}
-            {...register("last_name", {
+            error={errors.lastName?.message || ""}
+            {...register("lastName", {
               required: "Last name is required",
               pattern: {
                 value: /^[a-zA-Z]+$/,

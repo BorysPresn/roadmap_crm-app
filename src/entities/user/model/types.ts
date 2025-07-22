@@ -3,15 +3,15 @@ export interface LoginFormData {
   password: string;
 }
 export interface RegisterFormData extends LoginFormData {
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   repeatPassword: string;
 }
 
 export interface AuthSuccessResponse {
   message: string;
-  access_token: string;
-  refresh_token: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 export interface AuthErrorResponse {

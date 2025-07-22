@@ -1,5 +1,4 @@
 import { apiClient } from "@shared/api";
-import { omit } from "@shared/lib";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
 
@@ -16,8 +15,12 @@ export const useRegisterMutation = () =>
     RegisterFormData
   >({
     mutationFn: async (payload: RegisterFormData) => {
-      const dataToSend = omit(payload, ["repeatPassword"]);
-      const response = await apiClient.post("/auth/register", dataToSend);
+      const response = await apiClient.post("/auth/register", {
+        first_name: payload.firstName,
+        last_name: payload.lastName,
+        email: payload.email,
+        password: payload.password,
+      });
       return response.data;
     },
   });
