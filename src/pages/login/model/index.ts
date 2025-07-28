@@ -7,10 +7,9 @@ interface InputFieldsConfig extends InputProps {
   validation?: RegisterOptions<LoginFormData, keyof LoginFormData>;
 }
 
-export const inputFieldsConfig: InputFieldsConfig[] = [
+export const loginInputFieldsConfig: InputFieldsConfig[] = [
   {
     name: "email",
-    inputId: "email",
     label: "Email",
     type: "email",
     validation: {
@@ -23,7 +22,6 @@ export const inputFieldsConfig: InputFieldsConfig[] = [
   },
   {
     name: "password",
-    inputId: "password",
     label: "Password",
     type: "password",
     validation: { required: "Password is required" },

@@ -12,7 +12,7 @@ import {
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import { inputFieldsConfig } from "../model/index.ts";
+import { loginInputFieldsConfig } from "../model/index.ts";
 
 export const LoginPage = () => {
   const {
@@ -32,14 +32,14 @@ export const LoginPage = () => {
       <ContentContainer size="large">
         <ContentHeader headingLevel="h1" text="Login" />
         <FormContainer onSubmit={handleSubmit(submit)} noValidate>
-          {inputFieldsConfig.map((config) => (
+          {loginInputFieldsConfig.map((field) => (
             <Input
-              key={config.inputId}
-              type={config.type}
-              inputId={config.inputId}
-              label={config.label}
-              error={errors[config.name]?.message || errorMessage || ""}
-              {...register(config.name, config.validation)}
+              key={field.name}
+              type={field.type}
+              inputId={field.name}
+              label={field.label}
+              error={errors[field.name]?.message || errorMessage || ""}
+              {...register(field.name, field.validation)}
             />
           ))}
           <ButtonContainer>
