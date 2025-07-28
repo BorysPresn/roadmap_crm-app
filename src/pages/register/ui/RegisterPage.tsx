@@ -1,10 +1,4 @@
-import { useState } from "react";
-
-import {
-  type AuthErrorResponse,
-  type RegisterFormData,
-  useRegisterMutation,
-} from "@entities/user";
+import { type RegisterFormData, useRegister } from "@entities/user";
 import {
   Button,
   ButtonContainer,
@@ -13,42 +7,28 @@ import {
   FormContainer,
   Input,
   Overlay,
-  Toast,
 } from "@shared/ui";
-import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+
+import { registerInputFieldsConfig } from "../model/index.ts";
 
 export const RegisterPage = () => {
-  const [errorMessage, setErrorMessage] = useState<string>("");
+  const { registration, isSubmitting, errorMessage } = useRegister();
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm<RegisterFormData>();
 
   const navigate = useNavigate();
-  const registerMutation = useRegisterMutation();
-  const isSubmitting = registerMutation.isPending;
-  const password = watch("password");
+  // const password = watch("password");
 
   const submit: SubmitHandler<RegisterFormData> = async (
     data: RegisterFormData,
   ) => {
-    try {
-      await registerMutation.mutateAsync(data);
-      toast(<Toast icon="firework" message="User created, please Sign in" />);
-      navigate("/login");
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        if (error.response) {
-          const errorData = error.response.data as AuthErrorResponse;
-          setErrorMessage(errorData.message);
-        }
-      }
-    }
+    registration(data);
   };
 
   return (
@@ -56,69 +36,16 @@ export const RegisterPage = () => {
       <ContentContainer size="large">
         <ContentHeader headingLevel="h1" text="Register" />
         <FormContainer onSubmit={handleSubmit(submit)} noValidate>
-          <Input
-            type="text"
-            inputId="first"
-            label="First name"
-            error={errors.firstName?.message || ""}
-            {...register("firstName", {
-              required: "First name is required",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Only letters are allowed",
-              },
-            })}
-          />
-          <Input
-            type="text"
-            inputId="last"
-            label="Last name"
-            error={errors.lastName?.message || ""}
-            {...register("lastName", {
-              required: "Last name is required",
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: "Only letters are allowed",
-              },
-            })}
-          />
-          <Input
-            inputId="register-email"
-            label="Email"
-            type="email"
-            error={errors.email?.message || errorMessage || ""}
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Wrong email format",
-              },
-            })}
-          />
-          <Input
-            inputId="register-pass"
-            label="Password"
-            type="password"
-            error={errors.password?.message || ""}
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters",
-              },
-            })}
-          />
-          <Input
-            inputId="repeatPass"
-            label="Repeat password"
-            type="password"
-            error={errors.repeatPassword?.message || ""}
-            {...register("repeatPassword", {
-              required: "Repeat password is required",
-              validate: (value) =>
-                value === password || "Passwords do not match",
-            })}
-          />
+          {registerInputFieldsConfig.map((field) => (
+            <Input
+              key={field.name}
+              inputId={field.name}
+              type={field.type}
+              label={field.label}
+              error={errors[field.name]?.message || errorMessage || ""}
+              {...register(field.name, field.validation)}
+            />
+          ))}
           <ButtonContainer>
             <Button
               type="button"
