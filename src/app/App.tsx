@@ -1,9 +1,9 @@
-import { toastSetting } from "@shared/config/index.ts";
+import { toastSetting } from "@shared/config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import { appRouter } from "./providers/router/index.ts";
+import { appRouter } from "./providers/router";
 
 const client = new QueryClient();
 function App() {

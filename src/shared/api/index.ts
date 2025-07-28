@@ -1,1 +1,1 @@
-export { apiClient } from "./apiClient.ts";
+export { apiClient } from "./apiClient";

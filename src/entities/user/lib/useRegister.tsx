@@ -6,7 +6,7 @@ import { type SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { useRegisterMutation } from "../api/register.ts";
+import { useRegisterMutation } from "../api/register";
 import type { AuthErrorResponse, RegisterFormData } from "../model/types";
 
 export const useRegister = () => {

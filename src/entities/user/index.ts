@@ -1,10 +1,10 @@
-export { useLoginMutation } from "./api/login.ts";
-export { useRegisterMutation } from "./api/register.ts";
-export { useLogin } from "./lib/useLogin.ts";
+export { useLoginMutation } from "./api/login";
+export { useRegisterMutation } from "./api/register";
+export { useLogin } from "./lib/useLogin";
 export { useRegister } from "./lib/useRegister.tsx";
 export {
   type LoginFormData,
   type RegisterFormData,
   type AuthSuccessResponse,
   type AuthErrorResponse,
-} from "./model/types.ts";
+} from "./model/types";

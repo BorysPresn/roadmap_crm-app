@@ -3,8 +3,8 @@ import { useState } from "react";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 
-import { useLoginMutation } from "../api/login.ts";
-import { type AuthErrorResponse, type LoginFormData } from "../model/types.ts";
+import { useLoginMutation } from "../api/login";
+import { type AuthErrorResponse, type LoginFormData } from "../model/types";
 
 export const useLogin = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");

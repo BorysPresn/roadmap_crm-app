@@ -5,7 +5,7 @@ import { LoginPage } from "@pages/login";
 import { MainPage } from "@pages/main";
 import { NotFoundPage } from "@pages/not-found";
 import { RegisterPage } from "@pages/register";
-import { Tasks } from "@pages/tasks/index.ts";
+import { Tasks } from "@pages/tasks";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
 export const appRouter = createBrowserRouter([

@@ -2,8 +2,8 @@ import React, { type ButtonHTMLAttributes } from "react";
 
 import clsx from "clsx";
 
+import { Icon } from "../Icon";
 import { type IconName } from "../Icon/Icon.tsx";
-import { Icon } from "../Icon/index.ts";
 
 import cl from "./Button.module.scss";
 
