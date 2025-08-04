@@ -1,5 +1,8 @@
-import { type LoginFormData, useLogin } from "@entities/user";
+import { useState } from "react";
+
+import { type LoginFormData, useLoginQuery } from "@entities/user";
 import { Button, ButtonContainer, FormContainer, Input } from "@shared/ui";
+import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
@@ -11,11 +14,20 @@ export const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormData>();
-  const { login, errorMessage, isSubmitting } = useLogin();
+  const { mutateAsync, isPending } = useLoginQuery();
   const navigate = useNavigate();
-
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const submit: SubmitHandler<LoginFormData> = async (data: LoginFormData) => {
-    login(data);
+    try {
+      await mutateAsync(data);
+      navigate("/dashboard");
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        setErrorMessage(error?.response?.data?.message);
+      } else {
+        setErrorMessage("Unknown error");
+      }
+    }
   };
   return (
     <FormContainer onSubmit={handleSubmit(submit)} noValidate>
@@ -35,7 +47,7 @@ export const LoginForm = () => {
           shape="pill"
           variant="white"
           onClick={() => navigate("/register")}
-          disabled={isSubmitting}
+          disabled={isPending}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
@@ -44,12 +56,7 @@ export const LoginForm = () => {
         >
           Sign up
         </Button>
-        <Button
-          shape="pill"
-          variant="blue"
-          type="submit"
-          disabled={isSubmitting}
-        >
+        <Button shape="pill" variant="blue" type="submit" disabled={isPending}>
           Sign in
         </Button>
       </ButtonContainer>

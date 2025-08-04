@@ -1,7 +1,5 @@
-export { useLoginMutation } from "./api/login";
-export { useRegisterMutation } from "./api/register";
-export { useLogin } from "./lib/useLogin";
-export { useRegister } from "./lib/useRegister.tsx";
+export { useLoginQuery } from "./lib/useLoginQuery";
+export { useRegisterQuery } from "./lib/useRegisterQuery";
 export {
   type LoginFormData,
   type RegisterFormData,

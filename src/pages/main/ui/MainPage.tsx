@@ -8,7 +8,7 @@ import SideBar from "./SideBar/SideBar.tsx";
 const MainPage: React.FC = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem("access_token");
     if (!token) {
       navigate("/login");
     }

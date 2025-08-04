@@ -1,2 +1,2 @@
-export { LoginForm } from "./ui/LoginForm/LoginForm.tsx";
-export { RegisterForm } from "./ui/RegisterForm/RegisterForm.tsx";
+export { LoginForm } from "./ui/LoginForm";
+export { RegisterForm } from "./ui/RegisterForm";
