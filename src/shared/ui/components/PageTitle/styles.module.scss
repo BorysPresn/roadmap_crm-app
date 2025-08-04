@@ -1,0 +1,17 @@
+.default {
+  flex-grow: 1;
+  padding: 24px;
+  text-transform: capitalize;
+}
+
+.auth {
+  flex-grow: 1;
+  text-align: center;
+  padding: 14px 32px;
+}
+
+.modal {
+  padding: 14px;
+  padding-left: 32px;
+  justify-content: space-between;
+}

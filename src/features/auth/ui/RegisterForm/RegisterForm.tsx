@@ -2,17 +2,13 @@ import { useState } from "react";
 
 import { type RegisterFormData, useRegisterQuery } from "@entities/user";
 import { registerInputFieldsConfig } from "@features/auth/config/register-inputs-config";
-import {
-  Button,
-  ButtonContainer,
-  FormContainer,
-  Input,
-  Toast,
-} from "@shared/ui";
+import { Button, FormContainer, Input, Toast } from "@shared/ui";
 import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
+import cl from "./styles.module.scss";
 
 export const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -57,7 +53,7 @@ export const RegisterForm = () => {
           {...register(field.name, field.validation)}
         />
       ))}
-      <ButtonContainer>
+      <div className={cl.buttons}>
         <Button
           type="button"
           shape="pill"
@@ -75,7 +71,7 @@ export const RegisterForm = () => {
         <Button shape="pill" variant="blue" type="submit" disabled={isPending}>
           Sign up
         </Button>
-      </ButtonContainer>
+      </div>
     </FormContainer>
   );
 };

@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 import { type LoginFormData, useLoginQuery } from "@entities/user";
-import { Button, ButtonContainer, FormContainer, Input } from "@shared/ui";
+import { Button, FormContainer, Input } from "@shared/ui";
 import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import { loginInputFieldsConfig } from "../../config/login-inputs-config";
+
+import cl from "./styles.module.scss";
 
 export const LoginForm = () => {
   const {
@@ -41,7 +43,7 @@ export const LoginForm = () => {
           {...register(field.name, field.validation)}
         />
       ))}
-      <ButtonContainer>
+      <div className={cl.buttons}>
         <Button
           type="button"
           shape="pill"
@@ -59,7 +61,7 @@ export const LoginForm = () => {
         <Button shape="pill" variant="blue" type="submit" disabled={isPending}>
           Sign in
         </Button>
-      </ButtonContainer>
+      </div>
     </FormContainer>
   );
 };

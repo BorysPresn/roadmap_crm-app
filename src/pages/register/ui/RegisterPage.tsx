@@ -1,11 +1,11 @@
 import { RegisterForm } from "@features/auth";
-import { ContentContainer, ContentHeader, Overlay } from "@shared/ui";
+import { Overlay, PageContainer, PageTitle } from "@shared/ui";
 
 export const RegisterPage = () => (
   <Overlay>
-    <ContentContainer size="large">
-      <ContentHeader headingLevel="h1" text="Register" />
+    <PageContainer size="large">
+      <PageTitle variant="auth">Registration</PageTitle>
       <RegisterForm />
-    </ContentContainer>
+    </PageContainer>
   </Overlay>
 );

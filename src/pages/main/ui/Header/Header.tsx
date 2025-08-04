@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Icon } from "@shared/ui";
+import { Button, Icon, PageTitle } from "@shared/ui";
 import { Link, useLocation } from "react-router-dom";
 
 import cl from "./Header.module.scss";
@@ -17,9 +17,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className={cl.title}>
-        <h3>{location}</h3>
-      </div>
+      <PageTitle variant="default">{location}</PageTitle>
       <div className={cl.options}>
         <Button icon="add" shape="pill" variant="blue" iconPosition="right">
           Add new
