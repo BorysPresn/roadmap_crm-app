@@ -6,7 +6,7 @@ import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-import { loginInputFieldsConfig } from "../../config/login-inputs-config";
+import { loginInputFieldsConfig } from "../../config/loginInputsConfig";
 
 import cl from "./styles.module.scss";
 

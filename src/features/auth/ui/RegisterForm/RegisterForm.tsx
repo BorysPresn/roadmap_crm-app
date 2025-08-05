@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { type RegisterFormData, useRegisterQuery } from "@entities/user";
-import { registerInputFieldsConfig } from "@features/auth/config/register-inputs-config";
+import { registerInputFieldsConfig } from "@features/auth/config/registerInputsConfig";
 import { Button, FormContainer, Input, Toast } from "@shared/ui";
 import { AxiosError } from "axios";
 import { type SubmitHandler, useForm } from "react-hook-form";
