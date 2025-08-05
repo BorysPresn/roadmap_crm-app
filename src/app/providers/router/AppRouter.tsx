@@ -1,13 +1,22 @@
-import { Customers } from "@pages/cutomers/index.ts";
-import { Dashboard } from "@pages/dashboard/index.ts";
-import { Deals } from "@pages/deals/index.ts";
-import { MainPage } from "@pages/main/index.ts";
-import { NotFoundPage } from "@pages/notFound/index.ts";
-import { Tasks } from "@pages/tasks/index.ts";
+import { Customers } from "@pages/cutomers";
+import { Dashboard } from "@pages/dashboard";
+import { Deals } from "@pages/deals";
+import { LoginPage } from "@pages/login";
+import { MainPage } from "@pages/main";
+import { NotFoundPage } from "@pages/not-found";
+import { RegisterPage } from "@pages/register";
+import { Tasks } from "@pages/tasks";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
 export const appRouter = createBrowserRouter([
-  //TODO: add AuthPage
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
+  },
   {
     path: "/",
     element: <MainPage />,
