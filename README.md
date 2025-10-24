@@ -1,33 +1,27 @@
-# README
+# CRM App (Final Roadmap Project)
 
+This is my final project from the Frontend Developer roadmap.  
+I’m building it to practice and combine everything I’ve learned so far.
 
+## Overview
+The app is designed as a simple CRM system for managing customers and business processes.  
+Currently, it includes:
+- User authentication  
+- Page navigation  
 
-Final project from my Frontend Developer roadmap.  
-Built with React + TypeScript to consolidate everything I’ve learned so far.  
-Currently includes:
-  -  page navigation
-  -  authentication   
-Task management: Trello | Version control: GitHub
+## Tech Stack
+- **React + TypeScript**
+- **React Hook Form**, **React Query**
+- **Vite**, **ESLint**, **Prettier**
+- **Trello** for task management
+- **GitHub** for version control
 
+## Goal
+To simulate a real development environment — task tracking, code reviews, pull requests, and project structure based on modern best practices.
 
-## 🪝Git хуки в проекте
+## Status
+Project is still in progress — more features are being developed and improved.
 
-В этом репозитории настроены git-хуки через [Husky](https://typicode.github.io/husky/get-started.html). Они автоматически запускают проверки перед коммитом:
+---
 
-- ✅ [Prettier](https://prettier.io/docs/) — автоформатирование
-- ✅ [TypeScript](https://scriptdev.ru/) — проверка типов
-- ✅ [ESLint](https://eslint.org/docs/latest/use/getting-started) — проверка качества кода JavaScript. В этом проекте используются расширенные правила от airbnb. Список можно найти в папке .eslint_rules
-- ✅ [Steiger с правилами FSD](https://github.com/feature-sliced/steiger/tree/master) — проверка кода на соответствие FSD архитектуре
-- ✅ [Conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/) — проверка сообщений коммитов на соответствие Conventional commits соглашению
-
-**Что происходит при коммите**
-Перед каждым коммитом автоматически запускаются команды:
-
-```bash
-npx pretty-quick --staged # не вызывает ошибок, молча форматирует код
-npx tsc --noEmit --project ./tsconfig.app.json # может показывать ошибки
-node scripts/lint-staged.cjs # может показывать ошибки
-npx steiger ./src # может показывать ошибки
-```
-
-Если есть ошибки, коммит будет отклонён, и ты увидишь сообщения об ошибках в терминале или IDE.
+ Feel free to check out the code or reach out for details.
