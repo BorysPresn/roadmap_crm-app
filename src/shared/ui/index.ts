@@ -6,3 +6,4 @@ export { FormContainer } from "./components/FormContainer";
 export { Button } from "./components/Button";
 export { Toast } from "./components/Toast";
 export { Overlay } from "./components/Overlay";
+export { Modal } from "./components/Modal";

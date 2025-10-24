@@ -19,7 +19,7 @@ const Toast: React.FC<IToastProps> = ({ icon, message, closeToast }) => (
         onClick={closeToast}
         aria-label="close-toast"
       >
-        <Icon name="close" />
+        <Icon name="toastClose" />
       </button>
     )}
   </>

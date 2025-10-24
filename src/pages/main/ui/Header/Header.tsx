@@ -1,11 +1,13 @@
-import React from "react";
-
 import { Button, Icon, PageTitle } from "@shared/ui";
 import { Link, useLocation } from "react-router-dom";
 
 import cl from "./Header.module.scss";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  openModal: () => void;
+}
+
+const Header = ({ openModal }: HeaderProps) => {
   const location = useLocation().pathname.slice(1);
 
   return (
@@ -19,7 +21,13 @@ const Header: React.FC = () => {
       </div>
       <PageTitle variant="default">{location}</PageTitle>
       <div className={cl.options}>
-        <Button icon="add" shape="pill" variant="blue" iconPosition="right">
+        <Button
+          icon="add"
+          shape="pill"
+          variant="blue"
+          iconPosition="right"
+          onClick={() => openModal()}
+        >
           Add new
         </Button>
         <Button shape="round" variant="white" icon="search" border="grey" />
