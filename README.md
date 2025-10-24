@@ -1,5 +1,15 @@
 # README
 
+
+
+Final project from my Frontend Developer roadmap.  
+Built with React + TypeScript to consolidate everything I’ve learned so far.  
+Currently includes:
+  -  page navigation
+  -  authentication   
+Task management: Trello | Version control: GitHub
+
+
 ## 🪝Git хуки в проекте
 
 В этом репозитории настроены git-хуки через [Husky](https://typicode.github.io/husky/get-started.html). Они автоматически запускают проверки перед коммитом:
