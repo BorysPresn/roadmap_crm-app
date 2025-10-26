@@ -1,4 +1,4 @@
-import { Button } from "@shared/ui";
+import { Button } from "../../Button";
 
 import cl from "./styles.module.scss";
 
@@ -7,9 +7,9 @@ interface ModalHeaderProps {
   onClose: () => void;
 }
 const ModalHeader = ({ title, onClose }: ModalHeaderProps) => (
-  <div>
+  <div className={cl.header}>
     <p className={cl.title}>{title}</p>
-    <Button icon="modalClose" shape="round" variant="white" onClick={onClose} />
+    <Button icon="modalClose" shape="modal" variant="white" onClick={onClose} />
   </div>
 );
 

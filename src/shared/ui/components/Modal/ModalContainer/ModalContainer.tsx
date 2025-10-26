@@ -3,15 +3,15 @@ import clsx from "clsx";
 
 import cl from "./styles.module.scss";
 
-export type PageContainerSize = "small" | "medium" | "large";
+export type ModalContainerSize = "small" | "medium" | "large";
 
-interface PageContainerProps extends WithChildren {
-  size?: PageContainerSize;
+interface ModalContainerProps extends WithChildren {
+  size?: ModalContainerSize;
 }
 
-export const PageContainer = ({
+export const ModalContainer = ({
   children,
   size = "large",
-}: PageContainerProps) => (
+}: ModalContainerProps) => (
   <div className={clsx(cl.container, cl[size])}>{children}</div>
 );

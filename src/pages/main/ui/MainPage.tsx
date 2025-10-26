@@ -31,7 +31,11 @@ const MainPage: React.FC = () => {
         <SideBar />
         <Outlet />
       </main>
-      {isModalOpen && <Modal onClose={() => handleCloseModal()} />}
+      {isModalOpen && (
+        <Modal size="small" title="Add New" onClose={() => handleCloseModal()}>
+          hello World
+        </Modal>
+      )}
     </>
   );
 };

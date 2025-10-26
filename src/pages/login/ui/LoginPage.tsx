@@ -1,11 +1,11 @@
 import { LoginForm } from "@features/auth";
-import { Overlay, PageContainer, PageTitle } from "@shared/ui";
+import { ModalContainer, Overlay, PageTitle } from "@shared/ui";
 
 export const LoginPage = () => (
   <Overlay>
-    <PageContainer size="large">
+    <ModalContainer size="large">
       <PageTitle variant="auth">Login</PageTitle>
       <LoginForm />
-    </PageContainer>
+    </ModalContainer>
   </Overlay>
 );

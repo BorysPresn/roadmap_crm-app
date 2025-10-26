@@ -1,5 +1,12 @@
 @use "../../styles/variables" as *;
 
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .modalrow {
   width: 100%;
   height: 50px;

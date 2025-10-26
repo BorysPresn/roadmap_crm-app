@@ -1,10 +1,16 @@
 @use "../../../styles/typography" as *;
 @use "../../../styles/variables" as *;
 
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
 .title {
   font-size: $fz-small;
   line-height: $lh-h5;
   font-weight: 500;
-  padding-left: 15px;
   color: $grey-70;
 }
