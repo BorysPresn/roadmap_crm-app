@@ -9,6 +9,13 @@ import SideBar from "./SideBar/SideBar.tsx";
 
 const MainPage: React.FC = () => {
   const [activeModal, setActiveModal] = useState<ModalKey | null>(null);
+  const handleOpenModal = (key: ModalKey) => {
+    setActiveModal(key);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModal(null);
+  };
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -18,13 +25,6 @@ const MainPage: React.FC = () => {
     }
   });
 
-  const handleOpenModal = (key: ModalKey) => {
-    setActiveModal(key);
-  };
-
-  const handleCloseModal = () => {
-    setActiveModal(null);
-  };
   return (
     <>
       <Header openModal={() => handleOpenModal("addNew")} />

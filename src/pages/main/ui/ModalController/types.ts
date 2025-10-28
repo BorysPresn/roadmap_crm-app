@@ -8,15 +8,19 @@ export type ModalKey =
   | "createCustomer"
   | "selectCustomer";
 
+export interface ModalHeaderAction {
+  label: string;
+  onClick: (setActiveModal: (key: ModalKey | null) => void) => void;
+}
+
+export interface ModalRenderBodyCtx {
+  closeModal: () => void;
+  setActiveModal: (key: ModalKey | null) => void;
+}
+
 export type ModalConfig = {
   title: string;
   size: ModalContainerSize;
-  headerAction?: {
-    label: string;
-    onClick: (setActiveModal: (key: ModalKey | null) => void) => void;
-  };
-  renderBody: (ctx: {
-    closeModal: () => void;
-    setActiveModal: (key: ModalKey | null) => void;
-  }) => JSX.Element;
+  headerAction?: ModalHeaderAction;
+  renderBody: (ctx: ModalRenderBodyCtx) => JSX.Element;
 };

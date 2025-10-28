@@ -1,6 +1,6 @@
-import ModalHeader from "@pages/main/ui/ModalController/ModalHeader/ModalHeader.tsx";
 import { Modal } from "@shared/ui";
 
+import { ModalHeader } from "./ModalHeader/ModalHeader.tsx";
 import { modalConfig } from "./modalConfig.tsx";
 import type { ModalKey } from "./types";
 

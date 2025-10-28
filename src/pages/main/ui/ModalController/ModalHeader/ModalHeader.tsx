@@ -14,7 +14,7 @@ interface ModalHeaderProps {
   };
   setActiveModal: (key: ModalKey | null) => void;
 }
-const ModalHeader = ({
+export const ModalHeader = ({
   modalSize,
   title,
   onClose,
@@ -48,10 +48,9 @@ const ModalHeader = ({
         icon="modalClose"
         shape="modal"
         variant="white"
+        aria-label="Close"
         onClick={onClose}
       />
     </div>
   );
 };
-
-export default ModalHeader;
