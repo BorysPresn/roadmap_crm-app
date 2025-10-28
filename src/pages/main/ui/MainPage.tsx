@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import { Modal } from "@shared/ui/index";
 import { Outlet, useNavigate } from "react-router-dom";
 
 import Header from "./Header/Header.tsx";
+import { ModalController } from "./ModalController/ModalController.tsx";
+import type { ModalKey } from "./ModalController/types";
 import SideBar from "./SideBar/SideBar.tsx";
 
 const MainPage: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState<ModalKey | null>(null);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -17,24 +18,26 @@ const MainPage: React.FC = () => {
     }
   });
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleOpenModal = (key: ModalKey) => {
+    setActiveModal(key);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
+    setActiveModal(null);
   };
   return (
     <>
-      <Header openModal={() => handleOpenModal()} />
+      <Header openModal={() => handleOpenModal("addNew")} />
       <main>
         <SideBar />
         <Outlet />
       </main>
-      {isModalOpen && (
-        <Modal size="small" title="Add New" onClose={() => handleCloseModal()}>
-          hello World
-        </Modal>
+      {activeModal && (
+        <ModalController
+          modalKey={activeModal}
+          onCloseModal={handleCloseModal}
+          setActiveModal={setActiveModal}
+        />
       )}
     </>
   );

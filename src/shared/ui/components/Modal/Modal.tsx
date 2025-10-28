@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 
 import { Overlay } from "../Overlay";
-import { ModalContainer, type ModalContainerSize } from "./ModalContainer";
-import ModalHeader from "./ModalHeader/ModalHeader.tsx";
+import {
+  ModalContainer,
+  type ModalContainerSize,
+} from "./ModalContainer/ModalContainer.tsx";
 
 import cl from "./styles.module.scss";
 
 interface Modalprops {
-  title: string;
   size: ModalContainerSize;
   children: React.ReactNode;
   onClose: () => void;
 }
-export const Modal = ({ title, size, children, onClose }: Modalprops) => {
+export const Modal = ({ size, children, onClose }: Modalprops) => {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -38,12 +39,12 @@ export const Modal = ({ title, size, children, onClose }: Modalprops) => {
       <div
         className={cl.backdrop}
         onClick={handleOverlayClick}
-        aria-hidden="true"
+        onKeyDown={(e) => e.key === "Escape" && onClose()}
+        role="button"
+        tabIndex={0}
+        aria-label="Close modal"
       >
-        <ModalContainer size={size}>
-          <ModalHeader title={title} onClose={onClose} />
-          {children}
-        </ModalContainer>
+        <ModalContainer size={size}>{children}</ModalContainer>
       </div>
     </Overlay>
   );

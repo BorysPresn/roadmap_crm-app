@@ -13,5 +13,7 @@ export const ModalContainer = ({
   children,
   size = "large",
 }: ModalContainerProps) => (
-  <div className={clsx(cl.container, cl[size])}>{children}</div>
+  <div className={clsx(cl.container, cl[size])} role="dialog" aria-modal="true">
+    {children}
+  </div>
 );
