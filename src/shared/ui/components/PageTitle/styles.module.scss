@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .default {
   flex-grow: 1;
   padding: 24px;
@@ -11,7 +13,7 @@
 }
 
 .modal {
-  padding: 14px;
-  padding-left: 32px;
+  width: 100%;
   justify-content: space-between;
+  color: $grey-70;
 }

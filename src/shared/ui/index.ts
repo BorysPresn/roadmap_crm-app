@@ -1,6 +1,6 @@
 export * from "./components/Icon";
 export * from "./components/Input";
-export * from "./components/PageContainer";
+export * from "./components/Modal";
 export { PageTitle } from "./components/PageTitle";
 export { FormContainer } from "./components/FormContainer";
 export { Button } from "./components/Button";

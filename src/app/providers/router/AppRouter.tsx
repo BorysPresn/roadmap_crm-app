@@ -1,4 +1,4 @@
-import { Customers } from "@pages/cutomers";
+import { Customers } from "@pages/customers";
 import { Dashboard } from "@pages/dashboard";
 import { Deals } from "@pages/deals";
 import { LoginPage } from "@pages/login";

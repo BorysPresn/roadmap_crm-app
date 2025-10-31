@@ -1,6 +1,7 @@
 import React, { type FC, type SVGProps } from "react";
 
 import add from "../../icons/add.svg?react";
+import arrowRightBlue from "../../icons/arrowRightBlue.svg?react";
 import calendar from "../../icons/calendar.svg?react";
 import calendarBold from "../../icons/calendarBold.svg?react";
 import customers from "../../icons/customers.svg?react";
@@ -10,6 +11,7 @@ import dashboardBold from "../../icons/dashboardBold.svg?react";
 import deals from "../../icons/deals.svg?react";
 import dealsBold from "../../icons/dealsBold.svg?react";
 import logo from "../../icons/logo.svg?react";
+import modalClose from "../../icons/modalClose.svg?react";
 import notifications from "../../icons/notifications.svg?react";
 import notificationsBold from "../../icons/notificationsBold.svg?react";
 import search from "../../icons/search.svg?react";
@@ -31,8 +33,8 @@ export type NavIconName =
   | "settings";
 
 type NavIconNameBold = `${NavIconName}Bold`;
-type StaticIcons = "add" | "logo" | "search";
-export type ToastIcons = "fire" | "firework" | "close";
+type StaticIcons = "add" | "logo" | "search" | "modalClose" | "arrowRightBlue";
+export type ToastIcons = "fire" | "firework" | "toastClose";
 
 export type IconName = ToastIcons | StaticIcons | NavIconName | NavIconNameBold;
 
@@ -56,7 +58,9 @@ const icons: Record<IconName, FC<SVGProps<SVGSVGElement>>> = {
   settingsBold,
   firework: toastFirework,
   fire: toastFire,
-  close: toastClose,
+  toastClose,
+  modalClose,
+  arrowRightBlue,
 };
 
 interface IconProps {

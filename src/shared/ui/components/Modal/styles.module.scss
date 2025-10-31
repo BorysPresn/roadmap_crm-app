@@ -1,0 +1,24 @@
+@use "../../styles/variables" as *;
+
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalrow {
+  width: 100%;
+  height: 50px;
+  padding-inline: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.modalrow:not(:first-child) {
+  border-top: 1px solid $grey-30;
+}
+.modalrow svg {
+  color: $grey-70;
+}

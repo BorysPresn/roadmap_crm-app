@@ -8,7 +8,7 @@ import { type IconName } from "../Icon/Icon.tsx";
 import cl from "./Button.module.scss";
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  shape?: "pill" | "round";
+  shape?: "pill" | "round" | "modal";
   variant?: "white" | "blue" | "pink";
   border?: "grey";
   children?: React.ReactNode;

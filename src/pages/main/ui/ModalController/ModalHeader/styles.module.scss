@@ -1,0 +1,34 @@
+@use "../../../styles/typography" as *;
+@use "../../../styles/variables" as *;
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+  padding-inline: 24px 29px;
+
+  &--small {
+    height: 50px;
+    padding-inline: 15px;
+
+    .title {
+      font-size: $fz-small;
+      font-weight: $fw-medium;
+      color: $grey-70;
+    }
+  }
+}
+.title {
+  font-size: $fz-h5;
+  line-height: $lh-h5;
+  font-weight: $fw-bold;
+  color: $navy;
+}
+
+.headerAction {
+  padding: 0;
+  color: $blue;
+  margin-right: 29px;
+}
